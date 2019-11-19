@@ -1,0 +1,10 @@
+.login {
+    height: 100%;
+    background-color: #ffffff;
+    .am-list-line::after {
+        height: 0px !important;
+    }
+    .am-input-label-5 {
+        width: 40px !important;
+    }
+}

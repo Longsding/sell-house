@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+
+import Login from './pages/login/Login';
+import Main from './pages/main/Main';
+import Res from './pages/res/Res';
+import Forget from './pages/forget/Forget';
+import Map from './pages/Map';
+import Search from './pages/Search';
+import Citylist from './pages/Citylist'
+
+export default class App extends Component {
+  render() {
+    return (
+      <HashRouter>
+        <Switch>
+          <Redirect from='/' exact to='/home' />
+          <Route path='/home' component={Main} />
+          <Route path='/login' component={Login} />
+          <Route path='/res' component={Res} />
+          <Route path='/forget' component={Forget} />
+          <Route path='/map' component={Map} />
+          <Route path='/search' component={Search} />
+          <Route path='/citylist' component={Citylist} />
+        </Switch>
+      </HashRouter>
+    )
+  }
 }
-
-export default App;
